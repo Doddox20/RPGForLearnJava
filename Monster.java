@@ -16,13 +16,17 @@ public abstract class Monster extends Unit {
     }
 
     public boolean equip(Weapon weapon) {
+        if (isDead = !true) {
         System.out.println("Monsters are proud and fight with their own bodies.");
+        return false;
+        }
         return false;
     }
 
 
     public boolean attack(Fighter target) {
-        if (target =! this.getFighterClose() ) {
+        if (isDead = !true) {
+        if (target != this.getFighterClose() ) {
             System.out.println(this.getName() + ": I'm too far away from " + target.getName());
             return false;
         }
@@ -36,5 +40,6 @@ public abstract class Monster extends Unit {
         }
 
     }
-
+    return false;
+}
 }
