@@ -2,7 +2,7 @@ public class PowerFist extends Weapon {
 
     protected PowerFist() {
 
-        super("Power Fist", 8, 50, true);
+        super("Power Fist", 21, 50, true);
     }
 
     @Override

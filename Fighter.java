@@ -13,7 +13,7 @@ public interface Fighter {
 
     String getName();
 
-    int getAP();
+    int getAp();
     
-    int getHP();
+    int getHp();
 }

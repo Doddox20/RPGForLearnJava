@@ -17,7 +17,7 @@ public abstract class Weapon {
     public boolean isMelee() {
         return melee;
     }
-    
+
     protected Weapon (String name, int apcost, int damage, boolean melee){
         this.name = name;
         this.apcost = apcost;

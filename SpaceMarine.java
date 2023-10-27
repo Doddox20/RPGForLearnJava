@@ -30,7 +30,7 @@ public abstract class SpaceMarine extends Unit{
             return false;
         } else if (getAp() >= weapon.getApcost()) {
             System.out.println(getName() + " attacks " + target.getName() + " with a " + weapon.getName() + ".");
-            int damage = weapon.attack();
+            int damage = weapon.getDamage();
             target.receiveDamage(damage);
             ap =- weapon.getApcost();
             return true;
@@ -55,6 +55,7 @@ public abstract class SpaceMarine extends Unit{
         }
     }
 
+    @Override
     public void recoverAP() {
         if (ap < 50) {
             ap += 9;
