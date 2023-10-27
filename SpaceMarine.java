@@ -1,4 +1,3 @@
-import java.util.List;
 public abstract class SpaceMarine extends Unit{
 
     protected Weapon weapon;
@@ -8,6 +7,7 @@ public abstract class SpaceMarine extends Unit{
      protected SpaceMarine(String name, int hp, int ap) {
         super(name, hp, ap);
     }
+    @Override
     public boolean equip(Weapon weapon) {
         if (isDead == !true) {
         if (this.weapon == null && weapon.isEquipped() == false ) {
@@ -22,6 +22,7 @@ public abstract class SpaceMarine extends Unit{
     }
     return false;
     }
+    @Override
     public boolean attack(Fighter target){
         if (isDead == !true) {
         if (weapon == null) {

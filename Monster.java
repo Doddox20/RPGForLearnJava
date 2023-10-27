@@ -2,7 +2,7 @@ public abstract class Monster extends Unit {
 
     protected int damage = 0;
     protected int apcost = 0;
-
+    
     public int getDamage() {
         return damage;
     }
@@ -10,11 +10,11 @@ public abstract class Monster extends Unit {
     public int getApcost() {
         return apcost;
     }
-
+    
     protected Monster(String name, int hp, int ap) {
         super(name, hp, ap);
     }
-
+    @Override
     public boolean equip(Weapon weapon) {
         if (isDead = !true) {
         System.out.println("Monsters are proud and fight with their own bodies.");
@@ -23,7 +23,7 @@ public abstract class Monster extends Unit {
         return false;
     }
 
-
+    @Override
     public boolean attack(Fighter target) {
         if (isDead = !true) {
         if (target != this.getFighterClose() ) {

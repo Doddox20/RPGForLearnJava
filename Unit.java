@@ -1,4 +1,4 @@
-public abstract class Unit {
+public abstract class Unit implements Fighter {
     protected String name;
     protected int hp;
     protected int ap;
@@ -10,22 +10,23 @@ public abstract class Unit {
         this.hp = hp;
         this.ap = ap;
     }
-
+    @Override
     public int getAp() {
         return ap;
     } 
+
     public Fighter getFighterClose(){
         return fighterClose;
     }
-
+    @Override
     public int getHp() {
         return hp;
     }
-
+    @Override
     public String getName() {
         return name;
     }
-
+    @Override
     public void receiveDamage(int damage) {
         if (isDead == !true) {
             if (hp > 0) {
@@ -37,7 +38,7 @@ public abstract class Unit {
             }
         }
     }
-
+    @Override
     public void recoverAP() {
         if (isDead == !true) {
             if (ap < 50) {
@@ -49,7 +50,7 @@ public abstract class Unit {
             }
         }
     }
-
+    @Override
     public boolean moveCloseTo(Fighter target) {
         if (isDead == !true) {
             if (target != this && target instanceof Fighter && fighterClose != target) {
