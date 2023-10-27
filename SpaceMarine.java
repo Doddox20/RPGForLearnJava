@@ -1,22 +1,19 @@
 import java.util.List;
 public abstract class SpaceMarine extends Unit{
 
-   
-
     protected Weapon weapon;
-    protected List<SpaceMarine> allSpaceMarines;
     public Weapon getWeapon() {
         return weapon;
     }
      protected SpaceMarine(String name, int hp, int ap) {
         super(name, hp, ap);
-        allSpaceMarines.add(this);
     }
     public boolean equip(Weapon weapon) {
         if (isDead == !true) {
-        if (this.weapon == null && !isWeaponEquippedByOthers(weapon)) {
+        if (this.weapon == null && weapon.isEquipped() == false ) {
             this.weapon = weapon;
             System.out.println(this.getName() + " has been equipped with a " + weapon.getName() + ".");
+            weapon.equipped = true;
             return true;
         } else {
             return false;
@@ -44,14 +41,14 @@ public abstract class SpaceMarine extends Unit{
         }}
         return false;
     }
-    public boolean isWeaponEquippedByOthers(Weapon weapon) {
-        for (SpaceMarine spaceMarine : allSpaceMarines) {
-            if (spaceMarine.getWeapon() == weapon) {
-                return true;
-            }
-        }
-        return false;
-    }
+    // public boolean isWeaponEquippedByOthers(Weapon weapon) {
+    //     for (SpaceMarine spaceMarine : allSpaceMarines) {
+    //         if (spaceMarine.getWeapon() == weapon) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
     public boolean moveCloseTo(Fighter target) {
         if (isDead == !true) {
         if (weapon != null && weapon.isMelee() && target != this && this.getFighterClose() != target) {
