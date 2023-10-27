@@ -12,8 +12,9 @@ public abstract class Monster extends Unit{
     protected Monster(String name, int hp, int ap) {
         super(name, hp, ap);
     }
-    public void equip(){
+    public boolean equip(Weapon weapon){
         System.out.println("Monsters are proud and fight with their own bodies.");
+        return false;
     }
 
     public boolean attack(Fighter target){
@@ -24,9 +25,10 @@ public abstract class Monster extends Unit{
         if (this.getAp() > this.getApcost()){
             System.out.println(this.getName() + " attacks " + target.getName());
             ap -= apcost;
+            target.receiveDamage(damage);
             return true;
         } else {
-
+            return false;
         }
 
     }
