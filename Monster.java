@@ -20,17 +20,9 @@ public abstract class Monster extends Unit {
         return false;
     }
 
-    public void recoverAP() {
-        if (ap < 50) {
-            ap += 7;
-            if (ap > 50) {
-                ap = 50;
-            }
-        }
-    }
 
     public boolean attack(Fighter target) {
-        if (!moveCloseTo(target)) {
+        if (target =! this.getFighterClose() ) {
             System.out.println(this.getName() + ": I'm too far away from " + target.getName());
             return false;
         }

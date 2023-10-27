@@ -13,6 +13,9 @@ public abstract class Unit {
 
     public int getAp() {
         return ap;
+    } 
+    public Fighter getFighterClose(){
+        return fighterClose;
     }
 
     public int getHp() {
