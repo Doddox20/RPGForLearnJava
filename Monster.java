@@ -9,11 +9,10 @@ public abstract class Monster extends Unit{
     public int getApcost() {
         return apcost;
     }
-    
-
     protected Monster(String name, int hp, int ap) {
         super(name, hp, ap);
     }
-
-    
+    public void equip(){
+        System.out.println("Monsters are proud and fight with their own bodies.");
+    }
 }
