@@ -6,12 +6,4 @@ public class SuperMutant extends Monster {
         System.out.println(getName() + ": Roaarrr!");
     }
 
-    @Override
-    public void recoverAP() {
-        if (!isDead) {
-            super.recoverAP();
-
-
-        }
-    }
 }
