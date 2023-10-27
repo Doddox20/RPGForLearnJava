@@ -1,4 +1,4 @@
-public abstract class Monster extends Unit{
+public abstract class Monster extends Unit {
 
     protected int damage = 0;
     protected int apcost = 0;
@@ -6,23 +6,35 @@ public abstract class Monster extends Unit{
     public int getDamage() {
         return damage;
     }
+
     public int getApcost() {
         return apcost;
     }
+
     protected Monster(String name, int hp, int ap) {
         super(name, hp, ap);
     }
-    public boolean equip(Weapon weapon){
+
+    public boolean equip(Weapon weapon) {
         System.out.println("Monsters are proud and fight with their own bodies.");
         return false;
     }
 
-    public boolean attack(Fighter target){
+    public void recoverAP() {
+        if (ap < 50) {
+            ap += 7;
+            if (ap > 50) {
+                ap = 50;
+            }
+        }
+    }
+
+    public boolean attack(Fighter target) {
         if (!moveCloseTo(target)) {
             System.out.println(this.getName() + ": I'm too far away from " + target.getName());
             return false;
         }
-        if (this.getAp() > this.getApcost()){
+        if (this.getAp() > this.getApcost()) {
             System.out.println(this.getName() + " attacks " + target.getName());
             ap -= apcost;
             target.receiveDamage(damage);

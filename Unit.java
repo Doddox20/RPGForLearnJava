@@ -38,12 +38,5 @@ public abstract class Unit {
             return false;
         }
     }
-    public void recoverAP() {
-        if (ap < 50) {
-            ap += 7;
-            if (ap > 50) {
-                ap = 50;
-            }
-        }
-}
+    
 }
